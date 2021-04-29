@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="/static/js/move.js"></script>
+    <link href="/static/css/second.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/second.js"></script>
+
+    <!--<style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 100px;
+        }
+    </style>-->
+
+</head>
+
+<body>
+<!--<input type="button" value="按钮1" id="btn"/>
+<input type="button" value="按钮2" id="btn2"/>
+<div id="dv"> </div>-->
+<!--
+<form action="">
+    <select id="province">
+        <option value="">&#45;&#45;请选择&#45;&#45;</option>
+    </select>
+</form>
+<script type="text/javascript">
+    //json数据，可以直接定义使用
+    var data = [{
+        id: 100,
+        name: '广东'
+    }, {
+        id: 101,
+        name: '广西'
+    }, {
+        id: 102,
+        name: '云南'
+    }];
+    var provinceEle = document.getElementById("province");
+    for (let i = 0; i < data.length; i++) {
+        //new Option() 参数为选项的内容，参数2为选项的value
+        provinceEle.add(new Option(data[i].name, data[i].id));
+    }
+</script>-->
+
+<!--表格 start-->
+<div>
+    <input type="text" id="id" placeholder="请输入编号">
+    <input type="text" id="name"  placeholder="设备名称">
+    <input type="text" id="addr"  placeholder="连接地址">
+    <input type="text" id="dataname"  placeholder="数据名">
+    <input type="text" id="datavalue"  placeholder="数据值">
+    <button onclick="addFunction()">添加</button>
+</div>
+
+<!-- 学生信息表格 start -->
+<table>
+    <!-- 表格标题 -->
+    <caption>设备信息表</caption>
+
+    <tr>
+        <td>示例</td>
+        <td>设备名称 <input type="text" class="form-control" value="OPCUA" style="width:200px;height:30px;position:relative;top:10px;display:inline;"> </td>
+        <td>连接地址 <input type="text" class="form-control" value="http://localhost:4840" style="width:200px;height:30px;position:relative;top:10px;display:inline;"> </td>
+        <td>数据名称 <input type="text" class="form-control" value="转速" style="width:200px;height:30px;position:relative;top:10px;display:inline;"> </td>
+        <td>数据值
+            <form oninput="x.value=parseInt(a.value)">
+            <input type="range" id="a" value="70" style="width:150px;height:30px;position:relative;top:5px;display:inline;">
+            =<output name="x" for="a" value="70"></output>
+            </form>
+        </td>
+        <!-- 在该单元格中创建一个链接标签，void运算符来阻止href返回值，通过onclick事件(鼠标点击)属性来删除信息行-->
+        <td><a href="javascript:void(0);" onclick="delTr(this);" >删除</a></td>
+    </tr>
+</table>
+<!-- 学生信息表格 end -->
+
+
+<!--表格 end-->
+
+</body>
+<!--导入jquery包-->
+<script src="/static/jquery/jquery.min.js"></script>
+</html>
+
+<!--
+*******************************************************************************
+ * Copyright © 2017-2018 VMware, Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License. You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License
+ * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+ * or implied. See the License for the specific language governing permissions and limitations under
+ * the License.
+ *
+ * @author: Huaqiao Zhang, <huaqiaoz@vmware.com>
+ *******************************************************************************
+ -->

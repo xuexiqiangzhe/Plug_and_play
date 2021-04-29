@@ -1,0 +1,1 @@
+{"device":"OPCUA-Device01","origin":1618386646045410300,"readings":[{"name":"data1","value":"1","origin":1618386646045410300},{"name":"data2","value":"192","origin":1618386646045410300},{"name":"DeviceId","value":"388","origin":1618386646045410300},{"name":"alarmPriority","value":"false","origin":1618386646045410300}]

@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "server_config_default.h": "c",
+        "pthread.h": "c",
+        "sstream": "c"
+    }
+}

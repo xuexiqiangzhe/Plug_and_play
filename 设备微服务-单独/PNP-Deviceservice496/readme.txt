@@ -1,0 +1,2 @@
+gcc open62541.c device_service_driver.c -I./csdk-1.1.1/include -lrt -lm -lpthread ./csdk-1.1.1/lib/libcsdk.so ./libcbor.so.0.7 ./libmicrohttpd.so.10 -std=gnu11 -o Device-service
+./Device-service 49601 49604

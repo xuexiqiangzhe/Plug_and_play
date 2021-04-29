@@ -1,0 +1,38 @@
+运行Igh主站：
+sudo /etc/init.d/ethercat start
+编译可执行文件：
+gcc open62541.c 388model.c 496model.c EL6224.c /opt/etherlab/lib/libethercat.a -lrt -lm -lpthread -lmysqlclient  -o EL6224
+运行总线程序：
+./EL6224
+
+
+附录：
+没有运行总线程序之前
+//port1的设备的设备ID和厂家ID(输出16进制和10进制的)
+ ethercat upload -p 1 0x9000 0x04
+0x00000000 000
+ ethercat upload -p 1 0x9000 0x05
+0x00000000 000
+
+//port4的设备的设备ID和厂家ID
+ ethercat upload -p 1 0x9030 0x04
+0x00000000 000
+ ethercat upload -p 1 0x9030 0x05
+0x00000000 000 
+
+运行总线程序之后
+总线程序中有如下操作：
+//PREOP状态下，激活IO-Link主站的唤醒模式
+ethercat download -p1 0x8000 0x28 0x0023
+ethercat download -p1 0x8010 0x28 0x0023
+ethercat download -p1 0x8020 0x28 0x0023
+ethercat download -p1 0x8030 0x28 0x0023
+
+//OP状态下，SDO将被加载到相应寄存器
+ethercat upload -p 1 0x9000 0x24
+0x50 80
+//写入RW寄存器
+ethercat download -p 1 0x8000 0x24 0x50
+//可以稳定读取端口1的deviceid了
+ethercat upload -p 1 0x9000 0x04
+0x00000184 388

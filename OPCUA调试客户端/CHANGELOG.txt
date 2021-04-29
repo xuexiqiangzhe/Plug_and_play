@@ -1,0 +1,1622 @@
+﻿=======================================
+ Version 1.5.1
+=======================================
+
+------------------------
+ Bugfixes
+------------------------
+
+General:
+--------
+
+* Update C++ SDK to latest version 1.6.3
+
+* Update UaStack to latest version 1.4.6
+
+* Always show signature algorithm string in certificate info
+
+* Fix blocking GUI when loading project with servers that cannot be connected to
+
+* Check file format of all certificates and CRLs on startup
+
+* Fix handling of password protected UaExpert private key
+
+* Correctly handle alternative signature algorithm identifiers in certificates
+
+* Don't allow HTTP(S) for client side endpoint URL for reverse connections
+
+* Clarify descriptions in reverse connect GUI elements
+
+* Fall back to DiscoveryUrls if GetEndpoints on EndpointUrl fails
+
+AddressSpaceView:
+-------------
+
+* Improve performance of finding nodes that were set manually in other views
+
+AttributePlugin:
+----------------
+
+* Don't show error for array type if data type is Null
+
+* Display special meaning of ValueRank if available
+
+* Don't log errors if there's no session or the session is not connected
+
+DaPlugin:
+---------
+
+* Fix dropping folders from servers that don't support inverse references
+
+* Retrieve enum information for variables using one single read service call when dropping
+
+FileTransferPlugin:
+-------------------
+
+* Improve trace output
+
+* Use reasonable maximum length per read / write
+
+ReferencePlugin:
+----------------
+
+* Show NodeClass in tooltip
+
+* Follow reference on double click only
+
+XML Nodeset Export Plugin:
+--------------------------
+
+* Don't allow editing the result table
+
+* Various bugfixes in nodeset export module
+
+
+=======================================
+ Version 1.5.0
+=======================================
+
+------------------------
+ New Features
+------------------------
+
+General:
+--------
+
+* Update C++ SDK to latest version 1.6.2
+
+* Update UaStack to latest version 1.4.4
+
+* Update OpenSSL to V1.0.2o
+
+* Update libxml2 to V2.9.8
+
+* Use new widget for editing values
+
+* Add support for OPC UA specification 1.04 data types
+
+* Add support for new security policies Aes128Sha256RsaOaep and Aes256Sha256RsaPss
+
+* Add support for new DataTypeDefinition attribute as replacement for type dictionaries
+
+* Add option for reverse connect
+
+* Add licensing mechanism
+
+* Display warnings and errors in orange and red in log window
+
+* Add support for all SHA2 signature algorithms for own certificate
+
+* Invert direction of log view to have normal top-to-bottom order of logs
+
+* Enable trace by default with trace level 'Warning'
+
+* Allow using password protected private keys for X509 user tokens
+
+* Allow reordering recent servers using drag&drop in discovery tree view
+
+* Add toolbar button for (un)hiding all dock widgets
+
+* Allow changing the display name of configured servers
+
+* Show detailed information in tooltip of configured servers
+
+* Enable F2 key for editing server properties
+
+* React to BaseModelChangeEvent by clearing cache and rebrowsing the root folder
+
+* Show additional information about endpoint in tooltip of discovery and project view
+
+* Use new icons for endpoints
+
+* Use new input widget for numeric values
+
+* Don't include security configuration in default configuration name of endpoints
+
+* New number input widget
+
+* Call FindServersOnNetwork if port is 4840, fall back to FindServers on error
+
+* Show endpoint and server information in tooltip
+
+AddressSpaceView:
+-------------
+
+* Don't sort children with HasOrderedComponent reference
+
+AttributePlugin:
+----------------
+
+* Display new attributes from OPC UA specification 1.04
+
+* Allow writing all attributes
+
+* Check the data type of all attributes
+
+* Display NodeId in XML notation
+
+* Add 'Copy Value' context menu entry
+
+* Show binary content of ExtensionObject if it cannot be deserialized
+
+DevicesPlugin:
+-------------
+
+* Replace the devices plugin button with a new 'Devices View'
+
+PerformancePlugin:
+------------------
+
+* Improve subscribe test output
+
+* Recursively add child nodes when dropping folder into performance view
+
+* Allow adding nodes manually
+
+FileTransferPlugin:
+-------------------
+
+* Add new file transfer plugin
+
+DaPlugin:
+---------
+
+* Recursively add child nodes when dropping folder into DA view
+
+HistoryPlugin:
+--------------
+
+* Allow adding history nodes manually
+
+EventPlugin:
+------------
+
+* Allow adding event nodes manually
+
+ServerDiagnosticsPlugin:
+------------------------
+
+* Show certificate chain if there's more than one certificate
+
+* Show security mode in GetEndpoints result entry
+
+* Highlight differences between ApplicationDescriptions of FindServers and GetEndpoints
+
+* Add context menu for certificates
+
+* Show icons for servers and endpoints
+
+DataloggerPlugin:
+-----------------
+
+* Allow adding nodes manually
+
+XML Nodeset Export Plugin:
+--------------------------
+
+* New XML Nodeset Export Plugin
+
+ImageViewerPlugin:
+------------------
+
+* Show frames per second and frame size
+
+* Add 'Clear' button
+
+* Allow changing the publishing and sampling interval
+
+------------------------
+ Known Issues
+------------------------
+
+XML Nodeset Export Plugin:
+--------------------------
+
+* There are limitations when exporting nested complex structure definitions
+
+* Enum strings and method arguments are not being exported
+
+------------------------
+ Bugfixes
+------------------------
+
+General:
+--------
+
+* Unify plugin names
+
+* Optimize internal type cache
+
+* Fix default locale to use 'en-US'
+
+* Retry initial connect when loading project with connected server
+
+* Fix endpoint URL matching with URLs containing trailing slashes
+
+* Fix content of 'Report a bug...' EMail on linux
+
+* Only display and use certificates/CRLs that are recognized by UaStack
+
+* Several fixes regarding multithreading and GUI responsiveness
+
+* Fix appending the project file extension when saving project and log files
+
+* Lock stack settings if there are configured servers
+
+* Fix deserialization of DiagnosticInfo in structures
+
+* Prevent redundant Republish calls
+
+AddressSpaceView:
+-------------
+
+* Display correct icon for subtypes of FolderType and PropertyType
+
+AttributePlugin:
+----------------
+
+* Display enum string in enum array values
+
+DaPlugin:
+---------
+
+* Enable/disable context menu entries depending on selection
+
+MethodPlugin:
+-------------
+
+* Handle ValueRank of in/out arguments correctly
+
+DevicesPlugin:
+-------------
+
+* Don't sort nodes with HasOrderedComponent references
+
+* React to model change events
+
+EventPlugin:
+------------
+
+* Correctly display values of enum/optionset event fields
+
+HistoryPlugin:
+--------------
+
+* Fix GUI behavior when updating with no node to read
+
+* Fix detection of empty history when bounding values are requested
+
+* Fix actual executed number of history next calls
+
+* Don't reset tab view on cyclic updates
+
+ServerDiagnosticsPlugin:
+------------------------
+
+* Add tooltips indicating the error if variables cannot be displayed
+
+ReferencePlugin:
+----------------
+
+* Fix label text of browse path
+
+
+=======================================
+ Version 1.4.4
+=======================================
+
+------------------------
+ New Features
+------------------------
+
+General:
+--------
+
+* Add setting General.ShowUTCTimestamps
+
+HistoryPlugin:
+--------------
+
+* Add setting HistoryPlugin.RequestServerTimestamp
+
+------------------------
+ Bugfixes
+------------------------
+
+General:
+--------
+
+* Updates C++ SDK to latest version 1.5.4
+
+* Updates UaStack to latest version 1.3.12
+
+AttributePlugin:
+----------------
+
+* Use correct server when specifying a node manually
+
+ReferencePlugin:
+----------------
+
+* Use correct server when specifying a node manually
+
+DaPlugin:
+---------
+
+* Remove items if service result of CreateMonitoredItems was bad
+
+ServerDiagnosticsPlugin:
+------------------------
+
+* Don't clear but disable views until selection change, so all
+  values can still be seen even if disconnected
+
+
+=======================================
+ Version 1.4.3
+=======================================
+
+------------------------
+ New Features
+------------------------
+
+General:
+--------
+
+* Allow using <PID> placeholder in trace file name
+
+* Add CommonName to filename of stored certificates
+
+AttributePlugin:
+----------------
+
+* Display string identifier for nodes of namespace 0
+
+* Add 'Show in Address Space' button
+
+DaPlugin:
+---------
+
+* Make MaxNotificationsPerPublish configurable
+
+EventPlugin:
+------------
+
+* Display string identifier for nodes of namespace 0
+
+HistoryPlugin:
+--------------
+
+* Add DisplayName column
+
+* Always show numeric values in table view, too
+
+ReferencePlugin:
+----------------
+
+* Add 'Show in Address Space' context menu entry
+
+------------------------
+ Bugfixes
+------------------------
+
+General:
+--------
+
+* Updates C++ SDK to latest version 1.5.3
+
+* Updates UaStack to latest version 1.3.11
+
+* Update OpenSSL to V1.0.2j
+
+* Don't activate endpoint on single click on Linux
+
+* Additional callbacks for suppressing client side connect errors
+
+* Check for missing notifications when receiving KeepAlive
+
+* Don't allow setting WatchdogTime to non-accepted values
+
+* Handle subtypes of base data types correctly
+
+* Rename TypeDictionaryMode 'Manual' to 'Off'
+
+* Send client certificate only in secure connections or if
+  General.ForceSendClientCertificate is true
+
+* Fix default ApplicationUri
+
+AttributePlugin:
+----------------
+
+* Display children of optional nodes as optional, too
+
+* Check ArrayType of attribute values before accessing the value
+
+DaPlugin:
+---------
+
+* Fix subscription handling if no item can be restored after reconnect
+
+* Apply monitoring parameters also to disconnected items
+
+EventPlugin:
+------------
+
+* Don't require event field BranchId to contain a NodeId
+
+* Fix severity display for values above 1000
+
+HistoryPlugin:
+--------------
+
+* Prevent deletion of item while reading history
+
+* Prevent duplicate colors
+
+* Allow cancelling operation between calls with ContinuationPoint
+
+* Display status in table view
+
+DevicesPlugin:
+-------------
+
+* Fix string encoding in devices method dialog
+
+ServerDiagnosticsPlugin:
+------------------------
+
+* Replace host in DiscoveryUrl if GetEndpoints fails
+
+* Clear views when refreshing session / subscription list
+
+DataloggerPlugin:
+-----------------
+
+* Don't allow dropping nodes while running
+
+ReferencePlugin:
+----------------
+
+* Fix layout of browse path widgets on Linux
+
+PerformancePlugin:
+------------------
+
+* Remove nodes if server is removed
+
+ImageViewerPlugin:
+------------------
+
+* Clear image viewer if empty image is received
+
+* Prevent memleak on high load
+
+MethodPlugin:
+-------------
+
+* Add scroll bars if necessary to prevent unusable method dialog size
+
+
+=======================================
+ Version 1.4.2
+=======================================
+
+------------------------
+ Bugfixes
+------------------------
+
+General:
+--------
+
+* Updates C++ SDK to latest version 1.5.1
+
+* Updates UaStack to latest version 1.3.8
+
+* Fix GetTickCount overflow calculation bug
+
+* Fix MaxChunkCount calculation
+
+* Fix handling of IP addresses in certificate hostname check on connect
+
+* Fix finding UserTokens when using EndpointUrl different from what server returned
+
+* Additional check of signature algorithm used by server after create session
+
+* Fix handling of empty type dictionaries
+
+* Fix setting numeric array and matrix values
+
+* Fix scroll behavior of log window if full
+
+EventPlugin:
+------------
+
+* Trace EventFilterRequest before creating and modifying monitored item
+
+DevicesPlugin:
+-------------
+
+* Fix string encoding in descriptions
+
+
+=======================================
+ Version 1.4.1
+=======================================
+
+------------------------
+ New Features
+------------------------
+
+General:
+--------
+
+* Add 'View' menu for showing and hiding dock widgets and toolbars
+
+* Add General.DisableError... settings for suppressing certificate validation errors
+
+------------------------
+ Bugfixes
+------------------------
+
+* Updates UaStack to latest version 1.3.3
+
+* Update OpenSSL to V1.0.1p
+
+* Fix crash with invalid type dictionaries
+
+* Fix crash when deleting CRL from certificate manager
+
+General:
+--------
+
+* Fix title bar content for filenames containing multiple dots
+
+* Show certificate warning for weak key length or signature algorithm
+
+DataLoggerPlugin:
+-----------------
+
+* Fix PrimaryKeys used in data logger output
+
+DevicesPlugin:
+-------------
+
+* Add missing COM browsers again
+
+* Support double click and DEL key in COM and UA servers widgets
+
+GDSPlugin:
+----------
+
+* Create Nonce when calling 'Create CSR' with new keypair
+
+PerformancePlugin:
+------------------
+
+* Fix minimum height of service tabs
+
+
+=======================================
+ Version 1.4.0
+=======================================
+
+------------------------
+ New Features
+------------------------
+
+General:
+--------
+
+* Documentation now available via Help -> UaExpert Manual
+
+* Update to C++ Client SDK V1.5.0
+
+* Add support for SecurityPolicy Basic256Sha256
+
+* Improved traces
+
+* Improved stability
+
+* New GDS plugin
+
+* Support Unions and Structures with optional fields
+
+* Add setting General.InternalServiceCallTimeout, e.g. for reading dictionaries
+
+* Add settings Stack.SecureConnection_Min/MaxRevisedSecureChannelLifetime
+
+* Use actually used values instead -1 as default for Stack settings
+
+DaPlugin:
+---------
+
+* Allow changing of MonitoringMode and PublishingEnabled
+
+* New settings DaPlugin.MonitoringMode.Default and DaPlugin.PublishingEnabled.Default
+
+ReferencePlugin:
+----------------
+
+* Add BrowsePath overlay when following references by double-clicking
+
+* Improve ToolTips
+
+EventPlugin:
+------------
+
+* Display condition dialogs (can be disabled with EventsPlugin.ShowDialogConditions)
+
+* Add settings EventsPlugin.QueueSize and EventsPlugin.DiscardOldest
+
+AttributePlugin:
+----------------
+
+* Display new access levels StatusWrite and TimestampWrite
+
+* Support displaying and editing OptionSets
+
+ServerDiagnosticsPlugin:
+------------------------
+
+* Add combobox for choosing server
+
+------------------------
+ Bug Fixes
+------------------------
+
+General:
+--------
+
+* Fix bug when resetting settings
+
+* Fix loading projects with servers having more than 9 namespaces
+
+DaPlugin:
+---------
+
+* Fix assignment of subscriptions when opening many in parallel
+
+AttributePlugin:
+----------------
+
+* Fix displaying of nested Enums in Structures
+
+* Use access level names from UA specification
+
+DataloggerPlugin:
+-----------------
+
+* Fix crash after logging lots of values
+
+
+=======================================
+ Version 1.3.1
+=======================================
+
+------------------------
+ New Features
+------------------------
+
+General:
+--------
+
+* Mark modified settings with bold font
+
+* Show NamespaceIndex number in address space combo box
+
+* Updates C++ client SDK to version 1.4.3
+
+* Updates UaStack to latest version 1.2
+
+* Updates OpenSSL to version 1.0.1j
+
+* Update Qt to version 4.8.6
+
+------------------------
+ Bug Fixes
+------------------------
+
+General:
+--------
+
+* Fix loading of old projects (from before V 1.3.0) containing Data Access Views
+
+* Use General.ConnectTimeout for GetEndpoints call previous to connecting session
+
+* Fix endless loop when creating new certificate and old certificate had an unknown password
+
+* Allow reentering password on mismatch
+
+* Show message box if exact endpoint URL cannot be found in server's endpoints
+
+* Set lower limit of requested secure channel lifetime to lowest accepted lifetime
+
+* Reduce number of calls for reading the server's type dictionaries
+
+* Only save server certificate instead of chain if a chain was provided by the server
+
+* Support X509 tokens when changing user
+
+* Fix possible crash when parsing type dictionaries with missing references
+
+* Fix parsing enumerations if only NS0 type dictionary is defined
+
+* Avoid integer overflow in matrix edit widget
+
+PKI:
+----
+
+* Force two letter country code when creating certificates
+
+AttributePlugin:
+----------------
+
+* Show full string instead of shortened one when editing the value
+
+* Display local time only for source and server timestamp, use UTC otherwise
+
+DaPlugin:
+----------------
+
+* Trace if items are getting removed due to changed namespace table
+
+* Don't open value editor of next item after deleting item with DEL key
+
+* Fix crash when modifying item after setting DataChangeFilter
+
+HistoryPlugin:
+----------------
+
+* Don't discard results if there are empty HistoryReadResponses
+
+PerformancePlugin:
+----------------
+
+* Fix crash in subscribe test if testing in 'Duration' mode
+
+ReferencePlugin:
+----------------
+
+* Display forward name of reference type if inverse name is not set or empty
+
+* Always follow reference on double click, add context menu for browsing the reference type itself
+
+DataLoggerPlugin:
+----------------
+
+* Disable all GUI elements in runtime mode
+
+EventPlugin:
+----------------
+
+* Fix crash when auto-reconnecting to different server while being subscribed to events
+
+
+=======================================
+ Version 1.3.0
+=======================================
+
+------------------------
+ New Features
+------------------------
+
+General:
+--------
+
+* Updates C++ client SDK to version 1.4.1
+
+* Adds support for reading and writing generic structured data
+
+* Updates UaStack to version 1.2
+
+* Adds experimental support for HTTPS
+
+* SDK and UaStack warning and error traces are shown in the log window
+
+* Improved traces
+
+* Updates QWT to version 6.1.0
+
+* Updates OpenSSL to version 1.0.1g
+
+* New settings:
+
+    - General.MaxOperationsPerServiceCall
+    - General.SuppressSaveOnExit
+    - General.PublishTimeout
+    - General.RetrieveIcons
+    - General.DiscoveryTimeout
+
+* Adds 'Change User' button for changing the user of the current session
+
+* Icons are not retrieved by default to avoid many TranslateBrowsePaths calls
+
+* Adds endpoint filter in 'Add Server' dialog
+
+* New ImageViewer plugin for displaying images contained in ByteStrings
+
+* Adds 'Reset to default value' button to settings entries
+
+* New Server Diagnostics plugin for displaying server information
+
+* Disables server properties widget while connected
+
+* On error, retry GetEndpoints with hostname used for FindServers
+
+* New DataLogger plugin for logging data of variables to a file
+
+PKI:
+----
+
+* Using new UnifiedAutomation PKI store style
+
+* Checks if certificate matches private key on startup
+
+* Allows setting multiple DNS and IP entries in certificate
+
+* Reworks certificate dialog
+
+AttributePlugin:
+----------------
+
+* Always shows status code of value
+
+* Sets current NodeId and server in custom node dialog
+
+* New setting AttributePlugin.MaxAge
+
+* Displays value received from server even if status is bad
+
+DaPlugin:
+----------------
+
+* Sets current NodeId and server in custom node dialog
+
+EventPlugin:
+----------------
+
+* Adds tab for reading event history
+
+HistoryPlugin:
+----------------
+
+* Adds button 'Get history start time'
+
+PerformancePlugin:
+----------------
+
+* Adds buttons for resetting the result views
+
+ReferencePlugin:
+----------------
+
+* Displays NodeId of references and target nodes as tooltip
+
+* Double click on reference updates attribute and reference window with that node
+
+------------------------
+ Bug Fixes
+------------------------
+
+General:
+--------
+
+* Displays correct revised SecureChannel lifetime
+
+* Calls CloseSession if ActivateSession fails
+
+* Fixes parsing of DateTimes in certificates
+
+* Fixes possible crash when removing multiple servers very fast
+
+* Prevents double subscribing to ModelChangeEvents
+
+* Fixes default selected user token type if Anonymous is not available
+
+* Cancels quitting if save dialog is cancelled
+
+* Doesn't allow multiple recent endpoints with same name
+
+* Doesn't use type cache if disconnected
+
+* Observes limits for settings (e.g. SessionTimeout has a lower limit of 30000)
+
+* Ignores leading and trailing spaces when writing ByteString values
+
+* Uses the user's application data path as default path for trace files
+
+* Always shows milliseconds of UA timestamps
+
+* Deletes a subscription if ModelChangeEvent cannot be subscribed to
+
+* Unifies how DateTime is displayed and edited
+
+* Ensures that enums are initialized with valid values in array/matrix input widgets
+
+AttributePlugin:
+----------------
+
+* Traces error if reading custom NodeId fails
+
+* Shows whether AccessLevels_SemanticChange is set
+
+* Limits length of displayed strings to prevent GUI freezing
+
+* Unifies how status codes are displayed
+
+* Fixes check and colors for bad or uncertain status
+
+DaPlugin:
+-------------
+
+* Scrolls horizontally by pixel instead of per item
+
+* Prevents double creation of a subscription on reconnect
+
+* Displays correct settings if ModifyMonitoredItems failed
+
+* Sets project modified after adding items
+
+* Fixes typo in settings
+
+* Checks for valid MonitoredItemIds
+
+* Deletes a subscription if no item was added
+
+* Removes items from a view that failed on CreateMonitoredItems
+
+* Limits length of displayed strings to prevent GUI freezing
+
+* Fixes initial status of dropped items
+
+DevicesPlugin:
+-------------
+
+* Fixes node filter in device view, showing all existing nodes
+
+EventPlugin:
+-------------
+
+* Skips calling refresh if no subscription was created
+
+* Clears details if event list is cleared
+
+PerformancePlugin:
+-------------
+
+* Doesn't read values automatically on reconnect
+
+MethodPlugin:
+-------------
+
+* Makes all output argument widgets read-only
+
+
+=======================================
+ Version 1.2.2, Build Number 175
+=======================================
+
+------------------------
+ New Features
+------------------------
+
+General:
+--------
+
+* Adding default server if no server is configured
+
+* Adds setting General.LogMaxEntries
+
+* Unified naming of dock widgets
+
+* Checking for valid public key hashes in certificate extensions of UaExpert and server certificates
+
+AttributePlugin:
+-------------
+
+* Adds 'Expand All' button
+
+* Adds button for reading the attributes of a custom NodeId
+
+DaPlugin:
+-------------
+
+* Displaying type of extension objects in Datatype column
+
+* Adds data change filter options to MonitoredItem Settings dialog
+
+* Manually adding NodeIds possible using the context menu
+
+EventPlugin:
+-------------
+
+* Adds setting EventsPlugin.MaxEventLogEntries
+
+HistoryPlugin:
+--------
+
+* Displaying array history values as text table
+
+ReferencePlugin:
+-------------
+
+* Adds button for reading the references of a custom NodeId
+
+------------------------
+ Bug Fixes
+------------------------
+
+General:
+--------
+
+* Fixes display problems for strings containing non-ASCII characters
+
+* Fixes creation of X509 Certificate Extensions
+
+* Changes default MaxKeepAliveCount for all subscriptions to 5 seconds
+
+* Fixes small memleak when using a X509 authentication token
+
+* Makes writing the full value range of Int64/UInt64 possible
+
+* Fixes occasional unneccessary republish calls
+
+* Clearing type cache on disconnect or if a new session was created
+
+AddressSpaceView:
+-------------
+
+* Always refreshing highlight combo box when connection to server is established
+
+AttributePlugin:
+-------------
+
+* Changes DateTime format of variable values to match DA view format
+
+DaPlugin:
+-------------
+
+* Fixed wrong error message when data changes were received but CreateMonitoredItems did not finish yet
+
+* Fixes crash when changing subscription settings without valid subscription
+
+* Fixes occasional crash when receiving data very fast from many servers
+
+EventPlugin:
+-------------
+
+* Fixes logic for removing alarms from alarm view on refresh
+
+* Fixes possible crash when acknowledging/confirming all alarms
+
+* Allowing selecting objects in event type tree
+
+* Setting project modified only if 'Apply' was pressed, not if event field selection was changed only
+
+* (De)selecting event fields with same relative path if one was (de)selected
+
+* Restoring old event field selection if ModifyMonitoredItems failed
+
+HistoryPlugin:
+-------------
+
+* Displaying history correctly if bounding values have bad status
+
+* Storing running state of cyclic history read in projects
+
+* Not updating history on drop, only if 'Update' is clicked
+
+* Fixes crash when reading history data from disconnected servers
+
+PerformancePlugin:
+-------------
+
+* Reading values of items on test start instead of on drop, avoiding GUI freeze when dropping from slow servers
+
+ReferencePlugin:
+-------------
+
+* Clearing view on connection loss / disconnect
+
+
+=======================================
+ Version 1.2.1, Build Number 164
+=======================================
+
+------------------------
+ New Features
+------------------------
+
+General:
+--------
+
+* Using certificates for user authentication possible
+
+* Using EnumStrings or EnumValues of enumeration types if available
+
+* Using server-provided icons for nodes in the address space
+
+* Loading certificates in PEM format is now possible
+
+* Displaying date in timestamps possible with new ShowDateWithTimestamps settings
+
+* Receiving and evaluating ModelChangeEvents
+
+* Displaying icon overlay for (soon to be) invalid certificates
+
+* Allowing connection to non-existing endpoint
+
+* Displaying revised CreateSession values in log
+
+* Adds settings to configure session watchdog times
+
+* Adds automatic check for updates
+
+* Showing server/endpoint URL in tooltip of discovery view
+
+* Using checkboxes for editing boolean values
+
+* Storing window size and position of all dialogs
+
+* Fixes displaying of version info if additional info is set by the stack
+
+* Adds combo boxes for editing trace levels in settings
+
+* Adds option to accept server certificates temporarily
+
+* Adds setting 'General.MaxBrowseNextCalls' to prevent infinite browse loop
+
+* Checking certificate extensions for UA compliance
+
+* Accepting certificates that don't have the 'Authority Key Identifier' extension set only temporarily
+
+* Including compiler info and build timestamps to about box
+
+AddressSpaceView:
+-------------
+
+* Evaluating ModelChangeEvents and updating the affected node automatically
+
+* Autoscrolling address space to show content of expanded node
+
+* New icons for Variable- and ReferenceTypes
+
+* Adds combo box for highlighting namespaces
+
+HistoryPlugin:
+-------------
+
+* Showing non-numeric history values in table views
+
+* Displaying history graph depending on the Stepped property
+
+* Adds setting 'HistoryPlugin.MaxHistoryNextCalls' to prevent infinite browse loop
+
+DevicesPlugin:
+-------------
+
+* Optimizes type cache
+
+EventPlugin:
+-------------
+
+* Calling republish if notifications are missing
+
+* Removes condition type cache, identifying conditions by ConditionId
+
+* Resetting the view like suggested in the UA spec after refresh
+
+* Highlighting associated events in the event view
+
+* Clearing alarm view on connection interruption
+
+AttributePlugin:
+-------------
+
+* Writing the value of variables is now possible in the attribute view
+
+* Adds support for displaying RedundantServerDataType, EnumValues and diagnostic types
+
+DaPlugin:
+-------------
+
+* Displaying/entering LifeTime/MaxKeepAliveCount as time possible
+
+* Calling republish if notifications are missing
+
+* New column displaying the number of items
+
+------------------------
+ Bug Fixes
+------------------------
+
+General:
+--------
+
+* Asking for username and password on connect if password is not stored or username empty
+
+* Fixes misleading or erroneous trace messages
+
+* Setting maxKeepAlive/lifetimeCount of subscription matching session lifetime
+
+* Increases default timeout values
+
+* Forbidding usage of 4096bit-certificates as encryption with more than 2048bit is currently not possible with UA
+
+* Fixes multiple browse calls for type definition
+
+* Fixes PolicyId used if authentication token doesn't contain one
+
+* Sets status code of items to BadWaitingForInitialData after subscribing to them after connection error
+
+* Disables server certificate validation by the client SDK
+
+* Sorting entries by timestamp when inserting in log model
+
+* Hiding splash screen when showing message boxes
+
+* Fixes conversion problems from/to UTF-8, strings with non-ASCII characters were displayed and transferred wrongly in some places
+
+* Fixes conversion of UA timestamps to/from QDateTime, previously only the time_t-range could be displayed and entered
+
+* Fixes deadlock on shutdown if subscriptions are active
+
+* Fixes dialogs being displayed behind the splash screen
+
+* Setting the stack configuration from UaExpert settings on startup, before it was only set after being changed
+
+* Showing different certificate errors depending on if the cert is not yet or not anymore valid
+
+* Setting current filename correctly if project is loaded as command line argument
+
+* Clears project before loading project file given as argument
+
+* Unified displaying of float and double values
+
+Add Server dialog:
+-------------
+
+* Resizing discovery view to size of server names
+
+* Removes non-existant security policy 'Basic128' as only 'None', 'Basic128Rsa15' and 'Basic256' are defined in the UA specification
+
+MethodPlugin:
+-------------
+
+* Wrapping long description texts
+
+* Fixes crash if output arguments are received that are not defined in the method's OutputArguments property
+
+* Fixes crash if ArrayDimensions are missing in method argument and ValueRank > 0
+
+EventsPlugin:
+-------------
+
+* Fixes crash when trying to delete child items of monitored items (EventTypes or EventFields)
+
+* Fixes logic for creating subscriptions
+
+DevicesPlugin:
+-------------
+
+* Writing edited parameters only if conversion was successful
+
+* Fixes crash if service fault is returned by server
+
+DaPlugin:
+-------------
+
+* Fixes possible crash when deleting nodes of an invalid subscription
+
+* Fixes logic for creating subscriptions
+
+* Setting bad status code if subscription status changes to bad
+
+* Setting item status to BadCommunicationError on connection problems
+
+* Rejecting write if value could not be converted to the correct data type
+
+HistoryPlugin:
+-------------
+
+* Fixes title of history trend item graphs
+
+* Inverted Zoom direction
+
+* Removes check for OpcUa_GoodMoreData if ContinuationPoint is returned
+
+PerformancePlugin:
+-------------
+
+* Deleting subscription even if deleteMonitoredItems failed
+
+AttributePlugin:
+-------------
+
+* Showing timestamps in local time
+
+* Showing correct DataType for Argument values in attribute view
+
+* Fixes logic for showing attributes as optional
+
+
+=======================================
+ Version 1.2.0, Build Number 132
+=======================================
+
+------------------------
+ New Features
+------------------------
+
+General:
+--------
+
+* SDK and Stack trace can be enabled in the settings dialog
+
+* Tracing Server name in log window
+
+* Settings are displayed and changed depending on data type
+
+* Adds settings to change stack configuration
+
+* Loading UaExpert project files when given as command line parameter
+
+* Adds 'Recent Projects' list to file menu
+
+* Updated error messages map
+
+* Unified look&feel
+
+* Unified 'DEL' key behavior / context menu in item lists
+
+* Using new uawidget classes for displaying UA values
+
+* New performance plugin
+
+* Evaluating ModelChangeEvents
+
+Add Server dialog:
+-------------
+
+* Selecting last used endpoint by default
+
+* FindServers/GetEndpoints is called asynchronously
+
+* Adds network browser
+
+* Adds line edit for setting the SessionName, by default the application URI is used
+
+DaPlugin:
+-------------
+
+* Setting initial status of items dropped into DA view to BadWaitingForInitialData
+
+* MultiSelect in DA view possible
+
+* Hiding/moving columns possible, state can be stored
+
+* Displaying the date with timestamps depending on configuration
+
+* Array and matrix values can now be resized
+
+* Showing full NodeId of items
+
+* Performance improvements for fast changing values
+
+MethodPlugin:
+-------------
+
+* Load/Save of input/output arguments in method call dialog possible for string types
+
+* Adds text edit as editor/viewer for string types
+
+* Supporting array and matrix values
+
+AttributePlugin:
+-------------
+
+* Displaying arrays of byte
+
+* Displaying timestamps and status code with value
+
+* Displaying matrix values
+
+* Adds support for displaying ServiceCounterDataType and ApplicationDescription
+
+DevicesPlugin:
+-------------
+
+* New custom Links view for UaGateway configuration
+
+HistoryPlugin:
+-------------
+
+* Adds button to resize the view to original state
+
+* Adds cyclic update functionality
+
+EventPlugin:
+-------------
+
+* Revised event plugin
+
+* Selecting EventFields now possible
+
+* Showing all EventFields in new details view
+
+* Autoscrolling in event view can be enabled/disabled
+
+* Displaying of alarms with retain == false can be enabled/disabled
+
+* Confirming and commenting alarms possible
+
+* Adds AcknowledgeAll and ConfirmAll button
+
+* Evaluating RefreshRequiredEvent
+
+------------------------
+ Bug Fixes
+------------------------
+
+General:
+--------
+
+* Checking validity of application URI in certificate
+
+* Applying changes in settings dialog only if OK is pressed
+
+* Using General.CallTimeout and General.BrowseTimeout setting where not yet used
+
+* Fixes save/restore of window geometry and dock widget state
+
+* Tracing errors only if mandatory attributes have bad quality
+
+Linux:
+--------------
+
+* Fixes occasional application termination when connection to server is interrupted
+
+* Fixes selection of UserTokenTypes
+
+Add Server dialog:
+-------------
+
+* Hiding discovery servers
+
+DaPlugin:
+-------------
+
+* Checking for valid input arguments before calling
+
+* Deleting unused subscriptions
+
+* Fixes crash when displaying unknown data types
+
+* Defaulting to nearest value if monitoring/subscription settings are invalid
+
+MethodPlugin:
+-------------
+
+* Checking for valid input arguments before calling
+
+* Fixes string display for output arguments
+
+ReferencePlugin:
+-------------
+
+* Evaluating ContinuationPoints when browsing
+
+EventPlugin:
+-------------
+
+* Not calling acknowledge if 'Cancel' button is pressed
+
+
+
+=======================================
+ Version 1.1.0, Build Number 117
+=======================================
+
+------------------------
+ New Features
+------------------------
+
+General:
+--------
+
+* New 'About' dialog with stack and platform layer version information
+
+* Added certificate management dialog
+
+* Implemented bug reporting
+
+* Recent server configurations can be deleted with 'DEL' key
+
+* Stored certificates can be deleted with 'DEL' key
+
+* Added clear / save log functionality for log window
+
+DaPlugin:
+---------
+
+* Displaying string representation of status codes
+
+* Editing of array and matrix values possible
+
+* Editing of more data types possible
+
+EventPlugin:
+------------
+
+* Acked state is now resolved by ID, not by name
+
+* Calling refresh is now possible; is called automatically on connect
+
+* Added limit for displayed events
+
+HistoryPlugin:
+--------------
+
+* Using qwt library for displaying history values
+
+* HistoryViews save and load configured items to/from the project
+
+MethodPlugin:
+-------------
+
+* More data types supported when calling methods
+
+------------------------
+ Bug Fixes
+------------------------
+
+General:
+--------
+
+* Fixed resize / restore issues for different dialogues
+
+* Fixed storing of settings in different locations
+
+* Adding new server configuration is not blocked if name already exists
+
+* Fixed propagation of connection status changes to plugins/documents
+
+DaPlugin:
+---------
+
+* Documents: Subscriptions are deleted when closing documents
+
+EventPlugin:
+------------
+
+* Monitored items are always removed from list on 'Delete'
+
+* Same alarm coming from different monitored items is shown only once
+
+HistoryPlugin:
+--------------
+
+* Only items that support historizing can be added to HistoryTrendViews
+
+

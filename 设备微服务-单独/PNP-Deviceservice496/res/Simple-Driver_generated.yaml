@@ -1,0 +1,103 @@
+name: "OPCUA-Device02"
+manufacturer: "YAWEI CNC"
+model: "1"
+labels:
+ - "soap"
+ - "yawei"
+description: "YAWEI CNC SYSTEM"
+
+deviceResources:
+    -
+        name: "data1"
+        description: "processdata1"
+        attributes:
+            { majorID: "AlarmInformation", minorID: "alarmID", type: "dynamic" }
+        properties:
+            value:
+                { type: "Int32", readWrite: "R", defaultValue: "" }
+            units:
+                { type: "String", readWrite: "R", defaultValue: "" }
+    -
+        name: "data2"
+        description: "processdata2"
+        attributes:
+            { majorID: "AlarmInformation", minorID: "alarmMessage", type: "dynamic" }
+        properties:
+            value:
+                { type: "Int32", readWrite: "R", defaultValue: "" }
+            units:
+                { type: "String", readWrite: "R", defaultValue: "" }
+    -
+        name: "data3"
+        description: "processdata3"
+        attributes:
+            { majorID: "AlarmInformation", minorID: "alarmMessage", type: "dynamic" }
+        properties:
+            value:
+                { type: "Int32", readWrite: "R", defaultValue: "" }
+            units:
+                { type: "String", readWrite: "R", defaultValue: "" }
+    -
+        name: "data4"
+        description: "processdata4"
+        attributes:
+            { majorID: "AlarmInformation", minorID: "alarmMessage", type: "dynamic" }
+        properties:
+            value:
+                { type: "Int32", readWrite: "R", defaultValue: "" }
+            units:
+                { type: "String", readWrite: "R", defaultValue: "" }
+    -
+        name: "DeviceId"
+        description: "IO-Link-DeviceId"
+        attributes:
+            { majorID: "AlarmInformation", minorID: "alarmTime", type: "dynamic" }
+        properties:
+            value:
+                { type: "Int32", readWrite: "R", defaultValue: "" }
+            units:
+                { type: "String", readWrite: "R", defaultValue: "" }
+    -
+        name: "alarmPriority"
+        description: "alarm prioroty"
+        attributes:
+            { majorID: "AlarmInformation", minorID: "alarmPriority", type: "dynamic" }
+        properties:
+            value:
+                { type: "String", readWrite: "R", defaultValue: "" }
+            units:
+                { type: "String", readWrite: "R", defaultValue: "" }   
+
+deviceCommands:
+    -
+        name: "Information"
+        get:
+            -
+                { operation: "get", object: "data1", property: "value", parameter: "Information" }
+            -
+                { operation: "get", object: "data2", property: "value", parameter: "Information" }
+            -
+                { operation: "get", object: "data3", property: "value", parameter: "Information" }
+            -
+                { operation: "get", object: "data4", property: "value", parameter: "Information" }
+            -
+                { operation: "get", object: "DeviceId", property: "value", parameter: "Information" }
+            -
+                { operation: "get", object: "alarmPriority", property: "value", parameter: "Information" }
+    
+
+coreCommands:
+    -
+        name: "Information"
+        get:
+            path: "/api/v1/device/{deviceId}/Information"
+            responses:
+                -
+                    code: "200"
+                    description: "Successfully read the alarm informations"
+                    expectedValues: ["data1","data2","data3","data4","deviceid","alarmPriority"]
+                -
+                    code: "503"
+                    description: "service unavailable"
+                    expectedValues: []
+

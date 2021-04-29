@@ -1,0 +1,92 @@
+                         EdgeX Foundry Go Device SDK
+                                 Version 1.2.3
+                                 Release Notes
+
+INTRODUCTION
+============
+This document contains the release notes for the 1.2.3 version of EdgeX Foundry Go Device SDK.
+
+Changes for 1.2.3 "Geneva":
+============
+o PR#539:  docs(README.md): clarity for readers
+o PR#541:  update pr template to add dependency section
+o PR#545:  refactor: Remove client monitoring
+o PR#550:  Add ServerBindAddr setting in configuration
+o PR#551:  Update API doc for query parameters
+
+Changes for 1.2.2 "Geneva":
+============
+o PR#531:  Update Dockerfile
+o PR#533:  fix: device driver with consul takes so much cpu
+o PR#536:  Update go-mod-bootstrap version and increase device-simple timeout
+
+Changes for 1.2.1 "Geneva":
+============
+o PR#519:  fix: Update to use go-mod-bootstrap to fix issue with override un-done
+o PR#521:  fix: fix device service config stem in consul
+o PR#523:  feat: add ability for service name override
+o PR#527:  feat: replace --serviceName with --instance
+
+Changes for 1.2.0 "Geneva":
+============
+o PR#436:  Add gofmt test in Makefile
+o PR#438:  Changes for Geneva pipelines
+o PR#437:  Make deviceResource can be accessed directly
+o PR#423:  Add provision watcher implementation
+o PR#442:  Update relevant files in device-sdk-go for Go 1.13
+o PR#452:  Fixed issue where errors were not handled during configuration load
+o PR#439:  Github PR Template
+o PR#450:  Add provisionwatcher callback handler
+o PR#458:  Encode the float as base64 string by little-endian binary
+o PR#459:  Revert "Encode the float as base64 string by little-endian binary"
+o PR#461:  Update commit message guideline URL
+o PR#462:  Update readme and godoc for float encoding usage
+o PR#467:  Add v2 REST API specification
+o PR#432:  Refactor to use go-mod-bootstrap package
+o PR#447:  Refactored usage of service clients to be compatible with latest contracts changes
+o PR#473:  Switch CBOR library for security
+o PR#475:  Avoid logging CBOR event/reading
+o PR#478:  Update to correctly support -r argument
+o PR#481:  Check device profile from metadata in AddDevice
+o PR#474:  Add new fields on Reading
+o PR#483:  call updateDevice after updating device profile
+o PR#486:  Update porfile in add device callback handler
+o PR#490:  Allow device service to set empty logfile path
+o PR#492:  Refactor bootstrap process
+o PR#493:  Add UpdateDeviceOperatingState function
+o PR#448:  Implement dynamic device discovery
+o PR#500:  Assign FloatEncoding into Reading
+o PR#501:  Add check in StopAutoEvents
+o PR#484:  Support array data type in Readings
+o PR#499:  Parse base64 string as float value
+o PR#504:  feat(environment): Allow uppercase environment overrides
+o PR#506:  Refactor BootstrapHandler
+o PR#507:  Fix fetch configuration 404 error
+o PR#514:  update profile in update device callback handler
+
+Changes for 1.1.0 "Fuji":
+============
+o PR#330:  Listen to the OS signal during service startup
+o PR#333:  Support setting registry location with a single environment variable
+o PR#334:  Add CUD callbacks into ProtocolDriver
+o PR#336:  Handle QueryParams from EdgeX Command Service
+o PR#341:  Remove the additional calls for Device cache
+o PR#344:  Fix panic if attributes isn't initalized
+o PR#349:  Add /version API
+o PR#351:  Remove the duplicated service name in config stem
+o PR#357:  Add device-sdk API document
+o PR#362:  Implement default values for parameters to SET cmd
+o PR#363:  Make 0 is valid for Float32 and Float64 reading
+o PR#364:  Fix the wrong transformation for base
+o PR#367:  Make data for mock things readable and maintainable
+o PR#369:  Add lock into cache to make sure the thread safety
+o PR#374:  Add API to allow adding additional routes to internal Webserver
+o PR#375:  Update core-contracts reference to v0.1.30
+o PR#377:  Rename fields within ResourceOperation
+o PR#378:  Provide example of aggregating device resources
+o PR#379:  Handle the field name change in RO
+o PR#381:  Move web server listening before device provision
+o PR#382:  Move Creation of ValueDescriptors to Metadata
+o PR#384:  Move protocol driver init before provision
+o PR#386:  Revert to previous ordering between async channel create and driver init
+o PR#389:  Move Metadata GeneralClient to global variable
